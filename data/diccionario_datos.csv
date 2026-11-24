@@ -1,0 +1,60 @@
+tabla,campo,tipo_exportado,interpretación
+Principal,content_id,object,ID único por tipo M/T más ID; llave de relación
+Principal,tmdb_id,int64,ID original; no es único entre tipos
+Principal,content_type,object,Campo conservado de contexto o conteo
+Principal,title,string,Campo conservado de contexto o conteo
+Principal,title_label,string,Etiqueta única para rankings y tablas
+Principal,release_year,int64,Año de estreno; no fecha de incorporación
+Principal,release_period,object,Períodos previos conservados; 2020-2025 dura seis años
+Principal,date_added,object,Fecha dd/mm/aaaa del origen; incorporación sin verificar
+Principal,month_added,int32,Mes de la fecha de origen; no presentar como mes de incorporación verificado
+Principal,genre_main,object,"Primer género normalizado, no importancia comprobada"
+Principal,genres,object,Lista homologada; los grupos combinados se descomponen como aproximación
+Principal,n_genres,int64,Campo conservado de contexto o conteo
+Principal,country_main,object,País de producciones con un solo país; coproducciones agrupadas
+Principal,country_iso2,object,Código de referencia para mapa; ZZ no tiene ubicación única y se excluye
+Principal,tipo_produccion,object,"Un solo país, Coproducción o Sin información"
+Principal,country,string,Lista completa de países asociados
+Principal,n_countries,int64,Campo conservado de contexto o conteo
+Principal,language,object,"Idioma original en inglés, no todos los doblajes"
+Principal,language_code,object,Campo conservado de contexto o conteo
+Principal,director,string,Lista de nombres; no desambiguación de homónimos
+Principal,vote_count,int64,Campo conservado de contexto o conteo
+Principal,vote_average_x1000,Int64,Nota x1000; vacía con cero votos. Dividir por 1000; precisión de tres decimales
+Principal,es_confiable,int64,"1 si hay al menos MIN_VOTES votos; criterio operativo, no garantía estadística"
+Principal,rating_confiable,object,Campo conservado de contexto o conteo
+Principal,es_7_o_mas,int64,1 si la nota exacta es >=7 y cumple el criterio de votos
+Principal,rating_band,object,"Intervalos de nota exacta; límite inferior incluido y superior excluido, salvo 10 incluido"
+Principal,popularity_x1000,int64,Índice x1000; dividir por 1000. No reproducciones
+Principal,popularity_pct_tipo,int64,"Rango porcentual redondeado de 1-100, dentro de cada tipo"
+Principal,cuadrante,object,Posición respecto de las medianas de nota y popularidad de los títulos con 50 votos de su tipo
+Principal,es_alto_potencial,int64,1 si cumple el criterio de votos y está en o sobre ambas medianas
+Principal,datos_financieros,object,Sí si la película está en la tabla financiera con ambas cifras positivas
+Principal,cast,string,Reparto conservado del origen; lista de nombres
+Principal,description,string,Descripción textual para contexto
+Principal,genres_source,string,"Lista/grupo previo a homologación, tras normalización textual"
+Principal,release_period_years,int64,"Número de años del período: 5, 5 o 6"
+Principal,es_alta_nota_baja_pop,int64,"1 si tiene 50 votos o más, nota igual o superior a la mediana de su tipo y popularidad inferior a la mediana de su tipo"
+Principal,puntaje_prioridad_x10,Int64,"Promedio de los percentiles de nota y popularidad dentro de su tipo (títulos con 50 votos), x10; dividir por 10. Vacío si no tiene 50 votos"
+Principal,ranking_prioridad,Int64,Orden de 1 a N entre los títulos de alto potencial según el puntaje; empate por votos. Vacío fuera de alto potencial
+Principal,n_eval_genero_tipo,int64,Títulos con 50 votos del mismo tipo y primer género; usar para excluir grupos con menos de 30 evaluables
+Financiera,content_id,object,ID único por tipo M/T más ID; llave de relación
+Financiera,content_type,object,Campo conservado de contexto o conteo
+Financiera,title_label,string,Etiqueta única para rankings y tablas
+Financiera,release_year,int64,Año de estreno; no fecha de incorporación
+Financiera,release_period,object,Períodos previos conservados; 2020-2025 dura seis años
+Financiera,genre_main,object,"Primer género normalizado, no importancia comprobada"
+Financiera,country_main,object,País de producciones con un solo país; coproducciones agrupadas
+Financiera,country_iso2,object,Código de referencia para mapa; ZZ no tiene ubicación única y se excluye
+Financiera,language,object,"Idioma original en inglés, no todos los doblajes"
+Financiera,vote_count,int64,Campo conservado de contexto o conteo
+Financiera,vote_average_x1000,Int64,Nota x1000; vacía con cero votos. Dividir por 1000; precisión de tres decimales
+Financiera,es_confiable,int64,"1 si hay al menos MIN_VOTES votos; criterio operativo, no garantía estadística"
+Financiera,popularity_x1000,int64,Índice x1000; dividir por 1000. No reproducciones
+Financiera,budget,int64,Presupuesto de producción en USD por convención del proyecto
+Financiera,revenue,int64,"Ingresos de producción en USD por convención, no ingresos de StreamView"
+Financiera,profit,int64,"revenue-budget; saldo de producción, no utilidad neta"
+Financiera,roi_x1000000,int64,"revenue/budget x1000000, redondeado; dividir por 1000000. Error máximo de 0,0000005 veces"
+Financiera,resultado,object,Ingresos superiores/inferiores al presupuesto o Equilibrio
+Financiera,financiero_atipico,object,"Sí si ratio aproximado >100 o <0,01; bandera sin eliminar registro"
+Financiera,monto_financiero_revisar,object,Sí si presupuesto o ingresos positivos son menores a FIN_REVIEW_LIMIT; no prueba de error

@@ -1,0 +1,38 @@
+content_type,genre_main,titulos,evaluables,alto_potencial,alta_nota_baja_pop,cobertura_evaluable_pct,tasa_alto_potencial_todos_pct,tasa_alto_potencial_evaluables_pct
+Película,Animation,1117,861,528,188,77.1,47.3,61.3
+Película,War,144,118,61,28,81.9,42.4,51.7
+Película,Family,359,278,130,56,77.4,36.2,46.8
+Película,History,125,109,49,34,87.2,39.2,45.0
+Película,Adventure,381,318,129,50,83.5,33.9,40.6
+Película,Fantasy,247,203,78,19,82.2,31.6,38.4
+Película,Action,1883,1528,548,159,81.1,29.1,35.9
+Película,Romance,914,516,178,126,56.5,19.5,34.5
+Película,Western,61,49,16,2,80.3,26.2,32.7
+Película,Crime,487,424,134,89,87.1,27.5,31.6
+Película,Drama,3634,2676,838,926,73.6,23.1,31.3
+Película,Science Fiction,416,347,100,31,83.4,24.0,28.8
+Película,Mystery,191,143,36,35,74.9,18.8,25.2
+Película,Music,163,124,29,75,76.1,17.8,23.4
+Película,Thriller,961,773,179,93,80.4,18.6,23.2
+Película,Documentary,808,465,95,330,57.5,11.8,20.4
+Película,Comedy,2352,1982,376,424,84.3,16.0,19.0
+Película,Horror,1520,1180,195,60,77.6,12.8,16.5
+Película,TV Movie,130,90,10,32,69.2,7.7,11.1
+Película,Sin información,107,1,0,1,0.9,0.0,0.0
+Serie,Soap,339,49,25,1,14.5,7.4,51.0
+Serie,Family,420,46,20,10,11.0,4.8,43.5
+Serie,Kids,226,13,5,1,5.8,2.2,38.5
+Serie,Animation,1995,629,224,217,31.5,11.2,35.6
+Serie,Action,677,245,80,36,36.2,11.8,32.7
+Serie,Crime,648,234,74,31,36.1,11.4,31.6
+Serie,Science Fiction,373,209,63,27,56.0,16.9,30.1
+Serie,Western,12,10,3,1,83.3,25.0,30.0
+Serie,Drama,5033,994,291,185,19.7,5.8,29.3
+Serie,Comedy,2329,516,123,84,22.2,5.3,23.8
+Serie,Reality,1349,61,13,6,4.5,1.0,21.3
+Serie,Sin información,974,5,1,2,0.5,0.1,20.0
+Serie,Mystery,322,94,17,15,29.2,5.3,18.1
+Serie,War,64,12,2,1,18.8,3.1,16.7
+Serie,Documentary,708,84,11,36,11.9,1.6,13.1
+Serie,Talk,450,10,1,0,2.2,0.2,10.0
+Serie,News,72,1,0,0,1.4,0.0,0.0
