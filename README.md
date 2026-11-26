@@ -8,17 +8,17 @@ Evaluaciones: EP5 (encargo, informe y productos) y EP6 (presentación y defensa)
 
 Identificar las características de los títulos mejor evaluados y populares para ayudar a la
 **Gerencia de Adquisición y Gestión de Contenidos** a priorizar su revisión. El dashboard
-ofrece también una página ejecutiva para el **Directorio**.
+ofrece también una página ejecutiva para la **Gerencia General** y una página de **decisiones clave**.
 El trabajo integra películas y series con estrenos entre **2010 y 2025**. El foco es el
 problema 6, apoyado por el análisis de popularidad por género del problema 2.
 
 ## Productos
 
-- [Dashboard interactivo en Looker Studio](dashboard/enlace_dashboard.md): https://datastudio.google.com/reporting/5b6f98f7-9a1c-49e3-aab5-77f96458c8d4
-- [Configuración y cambios pendientes del dashboard](dashboard/configuracion_looker.md).
+- [Dashboard interactivo en Looker Studio](dashboard/enlace_dashboard.md): https://lookerstudio.google.com/reporting/44cfa945-28b2-4033-842d-2e0fa77d1856
+- [Exportación PDF del dashboard final, 3 páginas](dashboard/dashboard_final.pdf) y capturas en `images/dashboard/`.
+- [Configuración del dashboard en Looker Studio](dashboard/configuracion_looker.md).
 - [Notebook único: limpieza, EDA, validación y exportación](notebooks/01_limpieza_datos.ipynb).
-- Exportación PDF del dashboard (`dashboard/`) y capturas (`images/dashboard/`): deben re-exportarse
-  desde Looker Studio después de aplicar los cambios de `configuracion_looker.md`.
+- [Informe ejecutivo EP5 y EP6](docs/Informe_Ejecutivo_StreamView_EP5_EP6.pdf) y [resumen ejecutivo](docs/Resumen_Ejecutivo_StreamView.pdf).
 
 ## Estructura
 
@@ -44,11 +44,16 @@ streamview-analytics/
 ├── dashboard/
 │   ├── configuracion_looker.md
 │   ├── enlace_dashboard.md
-│   └── dashboard_ep2.pdf          # exportación anterior; reemplazar
+│   ├── dashboard_final.pdf        # exportación final, 3 páginas
+│   ├── dashboard_ep2.pdf          # versión anterior (EP2), como registro
+│   └── maqueta_dashboard.pdf
 └── images/
     ├── README.md
     ├── eda/                       # 13 figuras PNG
-    └── dashboard/                 # capturas anteriores; reemplazar
+    └── dashboard/                 # capturas de las 3 páginas del dashboard final
+├── docs/
+│   ├── Informe_Ejecutivo_StreamView_EP5_EP6.pdf
+│   └── Resumen_Ejecutivo_StreamView.pdf
 ```
 
 ## Requisitos

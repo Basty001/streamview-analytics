@@ -1,7 +1,7 @@
 # Configuración de Looker Studio
 
-Esta guía describe cómo debe quedar el dashboard con los CSV corregidos. Incluye los cambios que
-respondieron a la retroalimentación docente. Al terminar, re-exportar el PDF y las capturas.
+Esta guía documenta cómo está construido el dashboard final (3 páginas) con los CSV corregidos, incluidos los
+cambios que respondieron a la retroalimentación docente. Su exportación está en `dashboard_final.pdf`.
 
 ## 1. Actualizar las fuentes
 
@@ -68,7 +68,7 @@ dejar el campo numérico y poner "(veces)" en el título de la tarjeta.
 
 ## 5. Colores únicos
 
-Una sola asignación en las dos páginas, en la infografía y en el informe. Se establece manualmente en
+Una sola asignación en las tres páginas, en la infografía y en el informe. Se establece manualmente en
 Estilo, Colores de series, en cada gráfico que separe por tipo.
 
 | Elemento | Color |
@@ -81,15 +81,16 @@ Estilo, Colores de series, en cada gráfico que separe por tipo.
 Los gráficos de países e idiomas no separan por tipo; usar un tono distinto al azul de Película evita leerlos como
 "solo películas". Mantener la leyenda visible y las etiquetas de valor en las barras para no depender solo del color.
 
-## 6. Encabezados iguales en las dos páginas
+## 6. Encabezados iguales en las tres páginas
 
 Construir el encabezado en la página 1 (etiqueta superior pequeña, título, subtítulo, fila de filtros y Restablecer) y copiarlo a
-la página 2 con Copiar y Pegar. Después cambiar solo el texto. Misma fuente, tamaño, color, posición y alineación a la izquierda.
+las páginas 2 y 3 con Copiar y Pegar. Después cambiar solo el texto. Misma fuente, tamaño, color, posición y alineación a la izquierda.
 
 - Página 1: "Visión ejecutiva del catálogo" / "Composición, diversidad y evaluación de los contenidos del extracto, estrenos 2010-2025".
 - Página 2: "Gerencia de Adquisición y Gestión de Contenidos" / "Candidatos para revisión, priorizados por tipo, género y año de estreno".
+- Página 3: "Decisiones clave para StreamView" / "Decisiones de adquisición basadas en las páginas 1 y 2".
 
-## 7. Página 1: Directorio
+## 7. Página 1: Gerencia General
 
 Tarjetas (ancho suficiente para que el título no se corte; máximo 28 caracteres por título):
 
@@ -99,12 +100,10 @@ Tarjetas (ancho suficiente para que el título no se corte; máximo 28 caractere
 | Valoración promedio (≥50 votos) | Valoración promedio |
 | Títulos con nota ≥7 (%) | Títulos con nota 7 o más (%) |
 | Popularidad media | Popularidad media |
-| Títulos de alto potencial | Alto potencial |
-| Países de producción única | Países de producción única |
+| Potencial de adquisición | Alto potencial |
+| Países de producción | Países de producción única |
 
-Agregar la tabla **Indicadores por tipo de contenido** (debajo de las tarjetas), con la dimensión `Tipo de contenido` y las métricas
-Cantidad de títulos, Títulos evaluables, Valoración promedio, Popularidad media, Popularidad mediana y Tasa de alto potencial (evaluables),
-con fila de totales activada. Así queda explícito qué universo usa cada cifra. Valores de control:
+Valores de control por tipo, para verificar las tarjetas al filtrar por Película o Serie:
 
 | Tipo | Títulos | Evaluables | Valoración | Pop. media | Pop. mediana | Tasa alto potencial |
 |---|---:|---:|---:|---:|---:|---:|
@@ -112,7 +111,7 @@ con fila de totales activada. Así queda explícito qué universo usa cada cifra
 | Serie | 15.991 | 3.212 | 7,52 | 64,88 | 36,20 | 29,7% |
 | Total | 31.991 | 15.397 | 6,63 | 42,63 | 22,07 | 30,3% |
 
-Agregar una nota bajo las tarjetas: "Valoración y notas 7+ usan los 15.397 títulos con 50 votos; popularidad usa los 31.991 títulos."
+Nota bajo las tarjetas: "Valoración: 15.397 títulos con ≥50 votos · Popularidad: 31.991".
 
 Gráficos:
 
@@ -134,19 +133,20 @@ Tarjetas:
 | Título de la tarjeta | Métrica |
 |---|---|
 | Títulos evaluables | Títulos evaluables |
-| Alto potencial | Alto potencial |
-| Alta valoración, baja popularidad | Alta valoración y baja popularidad |
-| Alto potencial entre evaluables | Tasa de alto potencial (evaluables) |
+| Potencial de adquisición | Alto potencial |
 | Popularidad mediana | Popularidad mediana |
-| Ingresos/presupuesto mediano (×) | Ingresos/presupuesto (×); solo películas |
+| Alto potencial entre evaluables | Tasa de alto potencial (evaluables) |
+| Ingresos ÷ costo (×) | Ingresos/presupuesto (×); solo películas |
+
+La cantidad de títulos de alta valoración y baja popularidad (3.411) se muestra en el título de su tabla.
 
 Gráficos:
 
 - **Tasa de alto potencial por género:** barras horizontales agrupadas, dimensión `Género principal`, desglose `Tipo de contenido`,
-  métrica Tasa de alto potencial (evaluables), filtro del gráfico `n_eval_genero_tipo >= 30`, orden descendente. Mostrar el valor en la etiqueta.
+  métrica Tasa de alto potencial (evaluables), filtro del gráfico `n_eval_genero_tipo >= 50`, orden descendente. Mostrar el valor en la etiqueta.
   Mantener, junto a este gráfico o debajo, la cantidad de candidatos por género. El texto del gráfico debe decir: "La tasa usa como
-  denominador los títulos con 50 votos del mismo tipo y género; se excluyen grupos con menos de 30 evaluables."
-  Valores de control: Película, Animation 61,3% (528 de 861), War 51,7%, Family 46,8%; Serie, Soap 51,0% (25 de 49), Family 43,5%.
+  denominador los títulos con 50 votos del mismo tipo y género; solo géneros con ≥50 evaluables en películas y en series."
+  Valores de control: Animation 61,3% en películas (528 de 861) y 35,6% en series. Soap (49 evaluables) y Family (46) en series quedan excluidos.
 - **Títulos para explorar (candidatos de alto potencial):** tabla con filtro `es_alto_potencial = 1`, orden ascendente por
   `N.º` (`ranking_prioridad`). Columnas: N.º, Título, Tipo de contenido, Género principal, País, Año de estreno, Valoración (promedio),
   Popularidad (promedio), Votos (máximo), Puntaje de prioridad. Esta tabla incluye películas y series porque el puntaje usa
@@ -158,9 +158,27 @@ Gráficos:
 - **Popularidad mediana por año de estreno:** líneas con `Año de estreno` (título del eje "Año de estreno"), desglose por tipo, sin filtro de votos.
   Película azul y Serie naranja, igual que la página 1.
 
+## 8b. Página 3: Decisiones clave para StreamView
+
+Pregunta: "¿Qué decisiones de adquisición respalda la evidencia del catálogo?". Cuatro bloques, cada uno con pregunta, decisión,
+motivo y gráfico:
+
+1. **¿Qué géneros priorizar? → Animation en películas primero.** Tasa de alto potencial por género (mismo filtro `n_eval_genero_tipo >= 50`).
+2. **¿Películas o series? → Sumar series consolidadas (≥50 votos).** Tres barras pequeñas por tipo, cada una con su escala:
+   Valoración promedio (6,39 / 7,52), Popularidad mediana (10,91 / 36,2) y % con ≥50 votos (76,16% / 20,09%).
+   Campo calculado `% con ≥50 votos` = `SUM(es_confiable) / COUNT(content_id)`, tipo Numérico → Porcentaje.
+3. **¿Seguir concentrados en EE. UU.? → Explorar catálogos de Japón y Corea del Sur.** Tasa de alto potencial por país con línea de
+   referencia en el promedio 30,3% (Japón 45,83%, Corea del Sur 45,11%, EE. UU. 31,34%).
+4. **¿Solo estrenos recientes? → Revisar también series de 2016 a 2019.** Popularidad mediana por año de estreno
+   (series 2016-2019: 44,5; 2020-2024: 33,0).
+
+Pie de página: "Siguiente paso: el análisis reduce el catálogo de 31.991 a 4.662 títulos de alto potencial para revisar. Además, 3.411
+tienen buena nota pero poca visibilidad (oportunidad de promoción). Estas decisiones deben cruzarse con el costo de licencia."
+Botón de navegación "← Visión ejecutiva".
+
 ## 9. Interacción
 
-Filtros por `Tipo de contenido`, `Género principal`, `País`, `Idioma original` y `Año de estreno`, más Restablecer, en las dos páginas.
+Filtros por `Tipo de contenido`, `Género principal`, `País`, `Idioma original` y `Año de estreno`, más Restablecer, en las tres páginas.
 Los umbrales de alto potencial y de baja popularidad no cambian al filtrar.
 
 Pruebas obligatorias en modo consulta antes de exportar:
@@ -181,9 +199,9 @@ No afirmar una prueba funcional solo a partir de la exportación PDF.
 - Cada gráfico lleva un título que dice qué muestra y un subtítulo o nota con el universo (todos los títulos o evaluables).
 - Los títulos de las tarjetas no se cortan: si un título excede el ancho, acortarlo o ensanchar la tarjeta.
 
-## 11. Después de los cambios
+## 11. Exportación y mantenimiento
 
-1. Exportar el reporte a PDF (las dos páginas) y reemplazar `dashboard/dashboard_ep2.pdf`.
-2. Reemplazar las capturas de `images/dashboard/pagina_1.png` y `pagina_2.png`.
+1. Exportar el reporte a PDF (las tres páginas) y reemplazar `dashboard/dashboard_final.pdf`.
+2. Reemplazar las capturas `images/dashboard/pagina_1.png`, `pagina_2.png` y `pagina_3.png`.
 3. Comprobar que el enlace de [enlace_dashboard.md](enlace_dashboard.md) abre en modo consulta.
-4. Las capturas del informe y de la infografía deben salir de esta versión.
+4. Las capturas del informe y del resumen ejecutivo deben salir de la misma versión.

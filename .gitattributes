@@ -4,3 +4,6 @@
 *.ipynb text eol=lf
 *.png binary
 *.pdf binary
+
+# Originales: se conservan byte a byte (CRLF) para que coincida su SHA-256 en data/origenes.json
+data/raw/*.csv -text

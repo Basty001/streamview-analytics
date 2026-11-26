@@ -27,5 +27,5 @@ un país principal. `date_added` se conserva, pero no acredita incorporación a 
 Los años analizados son años de estreno y el extracto no representa todo el catálogo real.
 
 En `resumen_genero_tipo.csv`, `tasa_alto_potencial_evaluables_pct` usa como denominador los títulos con 50 votos
-y `tasa_alto_potencial_todos_pct` usa todos los títulos del grupo. Los grupos con menos de 30 evaluables
-tienen tasas poco estables y no deben ordenarse como ranking.
+y `tasa_alto_potencial_todos_pct` usa todos los títulos del grupo. Los grupos con menos de 50 evaluables
+tienen tasas poco estables: el dashboard los excluye de los gráficos de tasa (`n_eval_genero_tipo >= 50`).
