@@ -37,7 +37,7 @@ Principal,release_period_years,int64,"Número de años del período: 5, 5 o 6"
 Principal,es_alta_nota_baja_pop,int64,"1 si tiene 50 votos o más, nota igual o superior a la mediana de su tipo y popularidad inferior a la mediana de su tipo"
 Principal,puntaje_prioridad_x10,Int64,"Promedio de los percentiles de nota y popularidad dentro de su tipo (títulos con 50 votos), x10; dividir por 10. Vacío si no tiene 50 votos"
 Principal,ranking_prioridad,Int64,Orden de 1 a N entre los títulos de alto potencial según el puntaje; empate por votos. Vacío fuera de alto potencial
-Principal,n_eval_genero_tipo,int64,Títulos con 50 votos del mismo tipo y primer género; usar para excluir grupos con menos de 30 evaluables
+Principal,n_eval_genero_tipo,int64,Títulos con 50 votos del mismo tipo y primer género; usar para excluir grupos con menos de 50 evaluables
 Financiera,content_id,object,ID único por tipo M/T más ID; llave de relación
 Financiera,content_type,object,Campo conservado de contexto o conteo
 Financiera,title_label,string,Etiqueta única para rankings y tablas

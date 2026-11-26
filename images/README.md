@@ -17,3 +17,6 @@ Se exportan automáticamente al ejecutar el notebook o `src/ejecutar_eda.py`.
 12. Valoración y popularidad por año de estreno.
 13. Presupuesto, ingresos y distribución del ratio financiero.
 
+
+`dashboard/pagina_1.png` a `dashboard/pagina_3.png` son las capturas de las tres páginas del dashboard final
+(Visión ejecutiva, Gerencia de Adquisición y Decisiones clave), exportadas desde `dashboard/dashboard_final.pdf`.
